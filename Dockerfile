@@ -1,8 +1,7 @@
 FROM python:3.9
-
+RUN pip install --upgrade pip
 WORKDIR /apps
 ADD requirements.txt /apps/
-RUN pip3 install --upgrade pip
 RUN pip install -r /apps/requirements.txt
 ADD *.py /apps/
 EXPOSE 8000
