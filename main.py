@@ -12,9 +12,7 @@ def hello():
     user = os.environ['DB_USER'],
     password = os.environ['MYSQL_ROOT_PASSWORD'],
     db = os.environ['DB_NAME'],
-    port = 31000
-    conn = pymysql.connect(host=host, user=user, db=db,
-                           password=password, port=port, charset='utf8')
+    conn = pymysql.connect(host=host, user=user, db=db, password=password, charset='utf8')
     curs = conn.cursor()
     sql = "SELECT * from student";
     curs.execute(sql)
@@ -22,7 +20,6 @@ def hello():
     print(rows)
     conn.commit()
     conn.close()
-
     result = {"code" : 200, "message": rows}
     return result
 
