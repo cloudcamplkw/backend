@@ -5,12 +5,15 @@ metadata:
 spec:
  selector:
    matchLabels:
-    type: backend
+    type: web
+    app: backend
  replicas: 2
  template:
    metadata:
      labels:
-       type: backend
+       type: web
+       app: backend
+       version: v16
    spec:
     containers:
     - name: backend
